@@ -12,7 +12,6 @@ XanaScript is a programming language with Portuguese syntax, optimizing compiler
 | [xs-vscode](https://github.com/xanascr/xs-vscode) | VS Code extension |
 | [xs-site](https://github.com/xanascr/xs-site) | Official website |
 | [xs-examples](https://github.com/xanascr/xs-examples) | Code examples |
-| [xs-installer](https://github.com/xanascr/xs-installer) | Windows installer |
 
 ## Quick Start
 
