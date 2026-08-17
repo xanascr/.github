@@ -1,23 +1,17 @@
-<h1 align="center">XanaScript</h1>
-
 <p align="center">
-  <strong>Programe em Português. Rode em WebAssembly. Performance de verdade.</strong>
+  <h1 align="center">XanaScript</h1>
+  <p align="center">A typed programming language with Portuguese syntax, an optimizing compiler, a built-in ORM, and native WebAssembly support.</p>
+  <p align="center">
+    <a href="https://www.npmjs.com/package/xanascript"><img src="https://img.shields.io/npm/v/xanascript.svg?style=flat&color=%23f58b8e" alt="npm"></a>
+    <a href="https://github.com/xanascr/xs/blob/main/LICENSE"><img src="https://img.shields.io/github/license/xanascr/xs?style=flat&color=%23f58b8e" alt="License"></a>
+    <a href="https://github.com/xanascr/xs/releases"><img src="https://img.shields.io/github/v/release/xanascr/xs?style=flat&color=%23f58b8e" alt="Release"></a>
+    <a href="https://xanascript.xyz"><img src="https://img.shields.io/badge/website-xanascript.xyz-%23f58b8e?style=flat" alt="Website"></a>
+  </p>
 </p>
 
-<p align="center">
-  <a href="https://www.npmjs.com/package/xanascript"><img src="https://img.shields.io/npm/v/xanascript?color=6a0dad&label=npm&logo=npm" alt="npm" /></a>
-  <a href="https://github.com/xanascr/xs/blob/main/LICENSE"><img src="https://img.shields.io/github/license/xanascr/xs?color=6a0dad" alt="License" /></a>
-  <a href="https://github.com/xanascr/xs/releases"><img src="https://img.shields.io/github/v/release/xanascr/xs?color=6a0dad&label=release" alt="Release" /></a>
-  <img src="https://img.shields.io/badge/node-%3E%3D18-6a0dad" alt="Node 18+" />
-</p>
+XanaScript is a strong-typed programming language with Portuguese keywords, built for readability and speed. It ships with an optimizing compiler that targets JavaScript and WebAssembly, a bytecode VM, a built-in ORM, compile-time macros, LSP and DAP support, and zero runtime dependencies.
 
----
-
-## O que é?
-
-Uma linguagem de programação **fortemente tipada** com sintaxe em **português**, compilador otimizador
-(JavaScript + WebAssembly + Bytecode VM), ORM embutido, macros de tempo de compilação, LSP, DAP
-(debugger) e **zero dependências em runtime**.
+## Quick Start
 
 ```xs
 DB Usuario {
@@ -28,64 +22,69 @@ DB Usuario {
 
 resolve main() {
   cria repo = Usuario.bota-ai({ nome: "Ana", idade: 25, ativo: verdadeiro })
-  grita-ae("Bem-vinda, " + repo.nome + "!")
+  grita-ae("Welcome, " + repo.nome + "!")
 }
 ```
 
-## ✨ Features
-
-| | |
-|---|---|
-| 🇧🇷 **Sintaxe em português** | `cria`, `se-pah`, `repete-na-moral`, `resolve`, `grita-ae`... |
-| ⚡ **3 backends** | Interpreter, Bytecode VM e WebAssembly (binário direto) |
-| 🔍 **Type checker** | Inferência estática com `xana check` |
-| 🗄️ **ORM embutido** | CRUD + validação + persistência em `.db/` |
-| 🧩 **Macros** | Expansão em tempo de compilação |
-| 🛠️ **LSP + DAP** | Autocomplete, hover e debugger no VS Code |
-| 📦 **Package manager** | `xs pkg` com registry próprio |
-| 🧪 **Test runner** | `crush` integrado, `test --watch` |
-| 🚫 **Zero deps** | Sem dependências em runtime |
-
-## 🚀 Começa já
-
 ```bash
 npm install -g xanascript
-
-# roda direto
-xs run app.xs
-
-# compila pra WebAssembly
-xs build --wasm app.xs
-
-# checa os tipos
-xs check app.xs
-
-# roda os testes
-xs test
-
-# formato e difusão
-xs fmt
+xana run app.xs
 ```
 
-## 📦 Repositórios
+Requires Node.js 18+.
 
-| Repositório | Descrição |
-|---|---|
-| [**xs**](https://github.com/xanascr/xs) | ⭐ Núcleo da linguagem — compilador, CLI, VM, wasm |
-| [**xs-vscode**](https://github.com/xanascr/xs-vscode) | Extensão oficial pro VS Code (syntax, LSP, debug) |
-| [**xs-site**](https://github.com/xanascr/xs-site) | Site oficial da linguagem |
-| [**xs-examples**](https://github.com/xanascr/xs-examples) | Exemplos prontos pra aprender |
-| [**xs-ideias**](https://github.com/xanascr/xs-ideias) | Lista de pacotes e projetos feitos com XanaScript |
+## Features
 
-## 🌐 Links
+- **Typed** - strong static typing with inference (`xana check`)
+- **Portuguese syntax** - keywords in Portuguese for accessibility
+- **Optimizing compiler** - JavaScript and WebAssembly output
+- **Bytecode VM** - stack-based VM for fast execution
+- **Built-in ORM** - JSON-backed CRUD with validation
+- **Package manager** - `xana install`, `xana publish`
+- **LSP support** - IDE integration with diagnostics and autocomplete
+- **DAP support** - debugging with breakpoints, step and variables
+- **Macros** - compile-time code generation
+- **Test runner** - native test framework (`xana test`)
+- **Zero dependencies** - no runtime dependencies
 
-- [Site](https://xanascript.xyz)
-- [Docs](https://github.com/xanascr/xs/tree/main/docs)
-- [npm](https://www.npmjs.com/package/xanascript)
-- [Binários](https://github.com/xanascr/xs/releases)
+## CLI
 
----
+```
+xana run <file>          Run .xs (AST interpreter)          [roda]
+xana vm <file>           Run .xs (bytecode VM)              [roda --vm]
+xana check <file>        Type-check without executing       [verifica]
+xana fmt <file>          Format code                        [ajeita]
+xana build <file>        Generate JavaScript                [monta]
+xana build --wasm <file> WebAssembly output
+xana test [dir]          Run tests (*test*.xs)              [teste]
+xana lsp                 Language Server Protocol           [fala-com-ide]
+xana repl                Interactive REPL                   [bate-papo]
+```
 
-<p align="center">
-  <sub>Feito com 💜 — programe do seu jeito.</sub>
-</p>
+Every command has a Portuguese alias (shown in `[brackets]`); both forms work.
+
+## Repositories
+
+| Repository | Description |
+|------------|-------------|
+| [xs](https://github.com/xanascr/xs) | Core language - compiler, CLI, VM, wasm |
+| [xs-vscode](https://github.com/xanascr/xs-vscode) | Official VS Code extension |
+| [xs-site](https://github.com/xanascr/xs-site) | Official website |
+| [xs-examples](https://github.com/xanascr/xs-examples) | Code examples |
+| [xs-ideias](https://github.com/xanascr/xs-ideias) | Packages and projects built with XanaScript |
+
+## Documentation
+
+- [Getting Started](https://github.com/xanascr/xs/blob/main/docs/getting-started.md)
+- [Syntax Reference](https://github.com/xanascr/xs/blob/main/docs/syntax.md)
+- [Type System](https://github.com/xanascr/xs/blob/main/docs/types.md)
+- [Standard Library](https://github.com/xanascr/xs/blob/main/docs/stdlib.md)
+- [ORM](https://github.com/xanascr/xs/blob/main/docs/orm.md)
+- [CLI Reference](https://github.com/xanascr/xs/blob/main/docs/cli.md)
+- [Examples](https://github.com/xanascr/xs/blob/main/docs/examples.md)
+
+## Links
+
+- Website: [xanascript.xyz](https://xanascript.xyz)
+- npm: [xanascript](https://www.npmjs.com/package/xanascript)
+- Releases: [github.com/xanascr/xs/releases](https://github.com/xanascr/xs/releases)
